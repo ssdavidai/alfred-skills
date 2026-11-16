@@ -1,0 +1,13 @@
+name: pack
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the pack and rebuild the zips
+        run: python3 scripts/build.py --check
